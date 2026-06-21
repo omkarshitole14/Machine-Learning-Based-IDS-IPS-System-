@@ -38,8 +38,6 @@ if st.button("Start Simulation"):
 
     attack_counter = {}
 
-    alerts = []
-
     for _ in range(packet_count):
 
         traffic, attack_type = generate_traffic()
@@ -112,7 +110,7 @@ if st.button("Start Simulation"):
     )
 
     stats.columns = [
-    "   Traffic Type",
+        "Traffic Type",
         "Count"
     ]
 
@@ -151,17 +149,17 @@ if st.button("Start Simulation"):
 
     st.subheader("Security Alerts")
 
-if alerts:
+    if alerts:
 
-    alert_df = pd.DataFrame(alerts)
+        alert_df = pd.DataFrame(alerts)
 
-    st.dataframe(
-        alert_df,
-        use_container_width=True
-    )
+        st.dataframe(
+            alert_df,
+            use_container_width=True
+        )
 
-else:
-    st.success("No attacks detected")
+    else:
+        st.success("No attacks detected")
 
 st.subheader("Saved Logs")
 
@@ -176,7 +174,7 @@ try:
         use_container_width=True
     )
 
-except:
+except Exception:
 
     st.info(
         "No logs yet"
