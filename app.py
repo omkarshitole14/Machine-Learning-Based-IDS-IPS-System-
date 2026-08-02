@@ -10,11 +10,11 @@ from src.ips_engine import get_action
 alerts = []
 
 st.set_page_config(
-    page_title="Hybrid IDS/IPS",
+    page_title="Machine Learning Based IDS/IPS",
     layout="wide"
 )
 
-st.title("Hybrid IDS/IPS Security Dashboard")
+st.title("Machine Learning Based IDS/IPS Security Dashboard")
 
 st.metric(
     "Model Accuracy",
